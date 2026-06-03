@@ -1,7 +1,11 @@
+import os
 import boto3
+from dotenv import load_dotenv
 
-ACCESS_KEY = "ВАШ_ИДЕНТИФИКАТОР_КЛЮЧА"
-SECRET_KEY = "ВАШ_СЕКРЕТНЫЙ_КЛЮЧ"
+load_dotenv()
+
+ACCESS_KEY = os.getenv("ACCESS_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 s3_client = boto3.client(
     service_name="s3",
